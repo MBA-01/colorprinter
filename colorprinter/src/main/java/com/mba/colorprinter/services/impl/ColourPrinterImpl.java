@@ -5,16 +5,19 @@ import com.mba.colorprinter.services.ColourPrinter;
 import com.mba.colorprinter.services.GreenPrinter;
 import com.mba.colorprinter.services.RedPrinter;
 
+import java.awt.*;
+
 public class ColourPrinterImpl implements ColourPrinter {
     private RedPrinter redPrinter;
     private GreenPrinter greenPrinter;
     private BluePrinter bluePrinter;
 
 
-    public ColourPrinterImpl(){
-        this.redPrinter = new EnglishRedPrinter();
-        this.greenPrinter = new EnglishGreenPrinter();
-        this.bluePrinter = new EnglishBluePrinter();
+    public ColourPrinterImpl(RedPrinter redPrinter, BluePrinter bluePrinter, GreenPrinter greenPrinter){
+        this.redPrinter = redPrinter;
+        this.bluePrinter = bluePrinter;
+        this.greenPrinter = greenPrinter;
+
     }
 
     @Override
